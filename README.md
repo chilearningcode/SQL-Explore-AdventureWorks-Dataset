@@ -207,8 +207,7 @@ select
   extract(year from ModifiedDate) as yr
   ,Status
   ,count(PurchaseOrderID) as order_cnt
-  ,sum(TotalDue) as value -- em thắc mắc tại sao ở đây mình dùng TotalDue mà không phải SubTotal ạ
-                            --> vì em nghĩ đơn bị pending là đơn có vấn đề không thanh toán được thì sao lại tính thuế vào ạ?
+  ,sum(TotalDue) as value 
 from `adventureworks2019.Purchasing.PurchaseOrderHeader` 
 where format_timestamp('%Y', ModifiedDate) = '2014'
   and Status = 1
