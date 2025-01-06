@@ -43,12 +43,9 @@ order by 2,1 desc;
 |7	|Nov 2013|Bike Racks|142|11472.0|50|
 |8  |	...
 
-
-
-
 ### Query 02: Calc % YoY growth rate by SubCategory & release top 3 cat with highest grow rate. Can use metric: quantity_item. Round results to 2 decimal
 ```sql
-with data as (
+with qty_data as (
     select 
       pps.Name as name
       ,format_date("%Y", sod.ModifiedDate) as year 
@@ -62,7 +59,7 @@ with data as (
     select *
       ,lag(qty_item) over (partition by name order by year) as prv_qty
       ,round((qty_item - lag(qty_item) over (partition by name order by year))/(lag(qty_item) over (partition by name order by year)),2) as qty_diff
-    from data 
+    from qty_data 
   ),
   sale_rk as (
     select *
@@ -79,9 +76,13 @@ from sale_rk
 where dkr <= 3 
 order by dkr;
 ```
+|Row	|name|qty_item|prv_qty|qty_diff|dkr
+|---|---|---|---|---|---
+|1	|Mountain Frames|3168|510|5.21|1
+|2	|Socks|2724|523|4.21|2
+|3	|Road Frames|5564|1137|3.89|3
 
-
-
+"Road Frames" was the product with the highest quantity sales, while "Mountain Frames" and "Socks" have the growth rate YoY%
 
 ### Query 03: Query 3: Ranking Top 3 TeritoryID with biggest Order quantity of every year. If there's TerritoryID with same quantity in a year, do not skip the rank number
 ```sql
@@ -106,7 +107,20 @@ select *
 from ranking 
 where rk <=3;
 ```
-
+|Row	|year|TerritoryID|order_cnt|rk
+|-|-|-|-|-
+|1	|2014|4|11632|1
+|2	|2014|6|9711|2
+|3	|2014|1|8823|3
+|4	|2013|4|26682|1
+|5	|2013|6|22553|2
+|6	|2013|1|17452|3
+|7	|2012|4|17553|1
+|8	|2012|6|14412|2
+|9	|2012|1|8537|3
+|10	|2011|4|3238|1
+|11	|2011|6|2705|2
+|12	|2011|1|1964|3
 
 
 
@@ -132,9 +146,12 @@ from discount_data
 group by 1,2
 order by 2,1; 
 ```
+|Row	|year|Name|total_cost
+|-|-|-|-
+|1	|2012|Helmets|149.71669
+|2	|2013|Helmets|543.21975
 
-
-
+There was a substantial increase in the discount cost from 2012 to 2013 for the "Helmets" subcategory, indicating a more aggressive discount strategy or higher sales volume benefiting from seasonal discounts.
 
 ### Query 05: Query 5: Retention rate of Customer in 2014 with status of Successfully Shipped (Cohort Analysis)
 ```sql
@@ -181,9 +198,39 @@ from all_join
 group by 1,2 
 order by 1,2;
 ```
+|Row	|mth_order|mth_diff|customer_cnt
+|-|-|-|-
+|1	|1|M - 0|2076
+|2	|2|M - 0|1805
+|3	|2|M - 1|78
+|4	|3|M - 0|1918
+|5	|3|M - 1|51
+|6	|3|M - 2|89
+|7	|4|M - 0|1906
+|8	|4|M - 1|43
+|9	|4|M - 2|61
+|10	|4|M - 3|252
+|11	|5|M - 0|1947
+|12	|5|M - 1|34
+|13	|5|M - 2|58
+|14	|5|M - 3|234
+|15	|5|M - 4|96
+|16	|6|M - 0|909
+|17	|6|M - 1|40
+|18	|6|M - 2|44
+|19	|6|M - 3|44
+|20	|6|M - 4|58
+|21	|6|M - 5|61
+|22	|7|M - 0|148
+|23	|7|M - 1|10
+|24	|7|M - 2|7
+|25	|7|M - 3|7
+|26	|7|M - 4|11
+|27	|7|M - 5|8
+|28	|7|M - 6|18
 
-
-
+There is a notable drop in retention from the first month to subsequent months. Most customers who made their first purchase in a given month did not return in significant numbers in the following months.
+This pattern is consistent across all months analyzed, indicating a need for strategies to improve customer retention.
 
 ### Query 06: Trend of Stock level & MoM diff % by all product in 2011. If %gr rate is null then 0. Round to 1 decimal
 ```sql
@@ -267,6 +314,8 @@ group by 1,2;
 ```
 
 
+## III. Conclusion
+This SQL project delved into the AdventureWorks dataset, revealing key insights into sales trends, customer demographics, and product performance. The analysis highlights the power of data-driven strategies in optimizing business operations and making informed decisions. Through this project, I enhanced my SQL skills and demonstrated the practical applications of data analysis in a business context.
 
 
 
