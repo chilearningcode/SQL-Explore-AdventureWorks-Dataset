@@ -27,23 +27,61 @@ left join `adventureworks2019.Production.Product` as pp
   on sod.ProductID = pp.ProductID
 left join `adventureworks2019.Production.ProductSubcategory` as pps 
   on cast(pp.ProductSubcategoryID as int) = pps.ProductSubcategoryID
-where date(sod.ModifiedDate) >= (select date_add(max(date(sod.ModifiedDate)), interval -12 month)
+where date(sod.ModifiedDate) >= (select date_add(max(date(ModifiedDate)), interval -12 month)
                              from `adventureworks2019.Sales.SalesOrderDetail`)
 group by 1,2
 order by 2,1 desc;
 ```
+|Row	|period|name|qty_item|total_sales|order_cnt|
+|---|---|---|---|---|---
+|1	|Jun 2013|Bib-Shorts|2|116.99|1|
+|2	|Jul 2013|Bib-Shorts|2|116.99|1|
+|3	|Feb 2014|Bib-Shorts|4|233.97|2|
+|4	|Apr 2014|Bib-Shorts|4|233.97|1|
+|5	|Sep 2013|Bike Racks|312|22828.51|71|
+|6	|Oct 2013|Bike Racks|284|21181.2|70|
+|7	|Nov 2013|Bike Racks|142|11472.0|50|
+|8  |	...
+
+
+
 
 ### Query 02: Calc % YoY growth rate by SubCategory & release top 3 cat with highest grow rate. Can use metric: quantity_item. Round results to 2 decimal
 ```sql
-SELECT distinct
-  trafficSource.source
-  , count(totals.visits) total_visits
-  , count(totals.bounces) total_no_of_bounces
-  , round(count(totals.bounces)*100.0 /count(totals.visits), 3) bounce_rates
-FROM `bigquery-public-data.google_analytics_sample.ga_sessions_201707*`
-group by 1
-order by 2 desc, 3 desc;
+with data as (
+    select 
+      pps.Name as name
+      ,format_date("%Y", sod.ModifiedDate) as year 
+      ,sum(sod.OrderQty) as qty_item
+    from `adventureworks2019.Sales.SalesOrderDetail` as sod
+    left join `adventureworks2019.Production.Product` as pp on sod.ProductID = pp.ProductID
+    left join `adventureworks2019.Production.ProductSubcategory` as pps on cast(pp.ProductSubcategoryID as int) = pps.ProductSubcategoryID
+    group by 1,2
+  ),
+  sale_diff as (
+    select *
+      ,lag(qty_item) over (partition by name order by year) as prv_qty
+      ,round((qty_item - lag(qty_item) over (partition by name order by year))/(lag(qty_item) over (partition by name order by year)),2) as qty_diff
+    from data 
+  ),
+  sale_rk as (
+    select *
+      ,dense_rank() over (order by qty_diff desc) as dkr 
+    from sale_diff 
+  )
+select distinct 
+  name
+  ,qty_item 
+  ,prv_qty
+  ,qty_diff
+  ,dkr 
+from sale_rk 
+where dkr <= 3 
+order by dkr;
 ```
+
+
+
 
 ### Query 03: Query 3: Ranking Top 3 TeritoryID with biggest Order quantity of every year. If there's TerritoryID with same quantity in a year, do not skip the rank number
 ```sql
@@ -69,6 +107,9 @@ from ranking
 where rk <=3;
 ```
 
+
+
+
 ### Query 04: Query 4: Calc Total Discount Cost belongs to Seasonal Discount for each SubCategory
 ```sql
 with discount_data as (
@@ -91,6 +132,9 @@ from discount_data
 group by 1,2
 order by 2,1; 
 ```
+
+
+
 
 ### Query 05: Query 5: Retention rate of Customer in 2014 with status of Successfully Shipped (Cohort Analysis)
 ```sql
@@ -138,6 +182,9 @@ group by 1,2
 order by 1,2;
 ```
 
+
+
+
 ### Query 06: Trend of Stock level & MoM diff % by all product in 2011. If %gr rate is null then 0. Round to 1 decimal
 ```sql
 with data_2011 as (
@@ -161,8 +208,10 @@ from (select *
         ,lag(stock_crt,1) over (partition by name order by mth) as stock_prv
       from data_2011 ) 
 order by 1,2 desc;
-
 ```
+
+
+
 
 ### Query 07: Calc Ratio of Stock / Sales in 2011 by product name, by month *Order results by month desc, ratio desc. Round Ratio to 1 decimal mom yoy*
 ```sql
@@ -200,6 +249,9 @@ left join stock_data as b
   and a.yr = b.yr 
 order by 1 desc, 7 desc ;
 ```
+
+
+
 
 ### Query 08: No of order and value at Pending status in 2014
 ```sql
