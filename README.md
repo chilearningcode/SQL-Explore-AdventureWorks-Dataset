@@ -14,3 +14,70 @@ The AdventureWorks2019 dataset by Microsoft is a comprehensive sample database s
 
 ## II. Eploring the Dataset
 
+### Query 01: Calculate the Quantity of items, Sales value & Order quantity by each Subcategory in Last 12 Mth
+```sql
+SELECT 
+  format_datetime('%b %Y', sod.ModifiedDate) as period
+  ,pps.Name as name
+  ,sum(sod.OrderQty) as qty_item
+  ,round(sum(sod.LineTotal),2) as total_sales
+  ,count(distinct sod.SalesOrderID) as order_cnt
+FROM `adventureworks2019.Sales.SalesOrderDetail` as sod
+left join `adventureworks2019.Production.Product` as pp 
+  on sod.ProductID = pp.ProductID
+left join `adventureworks2019.Production.ProductSubcategory` as pps 
+  on cast(pp.ProductSubcategoryID as int) = pps.ProductSubcategoryID
+where date(sod.ModifiedDate) >= (select date_add(max(date(sod.ModifiedDate)), interval -12 month)
+                             from `adventureworks2019.Sales.SalesOrderDetail`)
+group by 1,2
+order by 2,1 desc;
+```
+
+### Query 02: 
+```sql
+
+```
+
+### Query 03: 
+```sql
+
+```
+
+### Query 04: 
+```sql
+
+```
+
+### Query 05: 
+```sql
+
+```
+
+### Query 06: 
+```sql
+
+```
+
+### Query 07: 
+```sql
+
+```
+
+### Query 08: 
+```sql
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
