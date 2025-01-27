@@ -12,7 +12,13 @@ The AdventureWorks2019 dataset by Microsoft is a comprehensive sample database s
 - Enter the project name **"adventureworks2019"** and click "Enter".
 - Click on the **"adventureworks2019"** table to open it.
 
-## II. Eploring the Dataset
+## II. Result (in this chapter must have 2 part, 1 for the generally insight, 1 for the conclusion)
+### Insight 
+
+### Conclusion 
+This SQL project delved into the AdventureWorks dataset, revealing key insights into sales trends, customer demographics, and product performance. The analysis highlights the power of data-driven strategies in optimizing business operations and making informed decisions. Through this project, I enhanced my SQL skills and demonstrated the practical applications of data analysis in a business context.
+
+## III. Eploring the Dataset
 
 ### Query 01: Calc Quantity of items, Sales value & Order quantity by each Subcategory in Last 12 Mth
 ```sql
@@ -312,12 +318,6 @@ where format_timestamp('%Y', ModifiedDate) = '2014'
   and Status = 1
 group by 1,2;
 ```
-
-
-## III. Conclusion
-This SQL project delved into the AdventureWorks dataset, revealing key insights into sales trends, customer demographics, and product performance. The analysis highlights the power of data-driven strategies in optimizing business operations and making informed decisions. Through this project, I enhanced my SQL skills and demonstrated the practical applications of data analysis in a business context.
-
-
 
 
 
