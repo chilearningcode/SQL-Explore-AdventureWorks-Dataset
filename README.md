@@ -12,8 +12,7 @@ The AdventureWorks2019 dataset by Microsoft is a comprehensive sample database s
 - Enter the project name **"adventureworks2019"** and click "Enter".
 - Click on the **"adventureworks2019"** table to open it.
 
-## II. Result (in this chapter must have 2 part, 1 for the generally insight, 1 for the conclusion)
-### Insight 
+## II. Insight
 
 
 
