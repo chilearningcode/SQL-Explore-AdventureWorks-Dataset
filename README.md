@@ -15,12 +15,17 @@ The AdventureWorks2019 dataset by Microsoft is a comprehensive sample database s
 ## II. Result (in this chapter must have 2 part, 1 for the generally insight, 1 for the conclusion)
 ### Insight 
 
-### Conclusion 
-This SQL project delved into the AdventureWorks dataset, revealing key insights into sales trends, customer demographics, and product performance. The analysis highlights the power of data-driven strategies in optimizing business operations and making informed decisions. Through this project, I enhanced my SQL skills and demonstrated the practical applications of data analysis in a business context.
+
 
 ## III. Eploring the Dataset
+### Apply Problem Solving 
 
-### Query 01: Calc Quantity of items, Sales value & Order quantity by each Subcategory in Last 12 Mth
+| Understand Problem | Break it down into smaller pieces | Ideate | Implement and Review 
+|-|-|-|-
+| Which to be calculated (sum, count, ratio, etc.) and grouped? <br> Does it needs any filter (time, conditions, etc.)? | Which tables have data that I want to get? <br> Which columns have data corresponded to the problem? <br> Can I get the data I by one step, if not, break down even smaller? | How many step did I need to get the final result? <br> Is it optimized? | 
+
+### Implement Step 
+#### Query 01: Calc Quantity of items, Sales value & Order quantity by each Subcategory in Last 12 Mth
 ```sql
 SELECT 
   format_datetime('%b %Y', sod.ModifiedDate) as period
@@ -49,7 +54,7 @@ order by 2,1 desc;
 |7	|Nov 2013|Bike Racks|142|11472.0|50|
 |8  |	...
 
-### Query 02: Calc % YoY growth rate by SubCategory & release top 3 cat with highest grow rate. Can use metric: quantity_item. Round results to 2 decimal
+#### Query 02: Calc % YoY growth rate by SubCategory & release top 3 cat with highest grow rate. Can use metric: quantity_item. Round results to 2 decimal
 ```sql
 with qty_data as (
     select 
@@ -90,7 +95,7 @@ order by dkr;
 
 "Road Frames" was the product with the highest quantity sales, while "Mountain Frames" and "Socks" have the growth rate YoY%
 
-### Query 03: Query 3: Ranking Top 3 TeritoryID with biggest Order quantity of every year. If there's TerritoryID with same quantity in a year, do not skip the rank number
+#### Query 03: Query 3: Ranking Top 3 TeritoryID with biggest Order quantity of every year. If there's TerritoryID with same quantity in a year, do not skip the rank number
 ```sql
 with 
   data as (
@@ -130,7 +135,7 @@ where rk <=3;
 
 
 
-### Query 04: Query 4: Calc Total Discount Cost belongs to Seasonal Discount for each SubCategory
+#### Query 04: Query 4: Calc Total Discount Cost belongs to Seasonal Discount for each SubCategory
 ```sql
 with discount_data as (
   select distinct 
@@ -159,7 +164,7 @@ order by 2,1;
 
 There was a substantial increase in the discount cost from 2012 to 2013 for the "Helmets" subcategory, indicating a more aggressive discount strategy or higher sales volume benefiting from seasonal discounts.
 
-### Query 05: Query 5: Retention rate of Customer in 2014 with status of Successfully Shipped (Cohort Analysis)
+#### Query 05: Query 5: Retention rate of Customer in 2014 with status of Successfully Shipped (Cohort Analysis)
 ```sql
 with 
   info as (
@@ -238,7 +243,7 @@ order by 1,2;
 There is a notable drop in retention from the first month to subsequent months. Most customers who made their first purchase in a given month did not return in significant numbers in the following months.
 This pattern is consistent across all months analyzed, indicating a need for strategies to improve customer retention.
 
-### Query 06: Trend of Stock level & MoM diff % by all product in 2011. If %gr rate is null then 0. Round to 1 decimal
+#### Query 06: Trend of Stock level & MoM diff % by all product in 2011. If %gr rate is null then 0. Round to 1 decimal
 ```sql
 with data_2011 as (
   select 
@@ -266,7 +271,7 @@ order by 1,2 desc;
 
 
 
-### Query 07: Calc Ratio of Stock / Sales in 2011 by product name, by month *Order results by month desc, ratio desc. Round Ratio to 1 decimal mom yoy*
+#### Query 07: Calc Ratio of Stock / Sales in 2011 by product name, by month *Order results by month desc, ratio desc. Round Ratio to 1 decimal mom yoy*
 ```sql
 with sale_data as (
   select 
@@ -306,7 +311,7 @@ order by 1 desc, 7 desc ;
 
 
 
-### Query 08: No of order and value at Pending status in 2014
+#### Query 08: No of order and value at Pending status in 2014
 ```sql
 select 
   extract(year from ModifiedDate) as yr
@@ -319,7 +324,8 @@ where format_timestamp('%Y', ModifiedDate) = '2014'
 group by 1,2;
 ```
 
-
+## IV. Conclusion 
+This SQL project delved into the AdventureWorks dataset, revealing key insights into sales trends, customer demographics, and product performance. The analysis highlights the power of data-driven strategies in optimizing business operations and making informed decisions. Through this project, I enhanced my SQL skills and demonstrated the practical applications of data analysis in a business context.
 
 
 
