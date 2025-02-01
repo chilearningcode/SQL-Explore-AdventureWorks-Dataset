@@ -267,7 +267,16 @@ from (select *
       from data_2011 ) 
 order by 1,2 desc;
 ```
-
+|Row	|Name|mth|yr|stock_crt|stock_prv|diff_p
+|-|-|-|-|-|-|-
+|1	|BB Ball Bearing|12|2011|8475|14544|-41.73
+|2	|BB Ball Bearing|11|2011|14544|19175|-24.15
+|3	|BB Ball Bearing|10|2011|19175|8845|116.79
+|4	|BB Ball Bearing|9|2011|8845|9666|-8.49
+|5	|BB Ball Bearing|8|2011|9666|12837|-24.7
+|6	|BB Ball Bearing|7|2011|12837|5259|144.1
+|7	|BB Ball Bearing|6|2011|5259|null|0.0
+|8	|...
 
 
 
@@ -307,7 +316,16 @@ left join stock_data as b
   and a.yr = b.yr 
 order by 1 desc, 7 desc ;
 ```
-
+|Row	|mth|yr|ProductID|Name|sales|stocks|ratio
+|-|-|-|-|-|-|-|-
+|1	|12|2011|758|Road-450 Red, 52|37|518|14.0
+|2	|12|2011|754|Road-450 Red, 58|29|348|12.0
+|3	|12|2011|755|Road-450 Red, 60|18|162|9.0
+|4	|12|2011|774|Mountain-100 Silver, 48|22|189|8.59
+|5	|12|2011|762|Road-650 Red, 44|82|680|8.29
+|6	|12|2011|756|Road-450 Red, 44|23|184|8.0
+|7	|12|2011|761|Road-650 Red, 62|62|465|7.5
+|8	|...
 
 
 
@@ -323,6 +341,11 @@ where format_timestamp('%Y', ModifiedDate) = '2014'
   and Status = 1
 group by 1,2;
 ```
+|Row	|yr|Status|order_cnt|value
+|-|-|-|-|-
+|1	|2014|1|224|3873579.0123000029
+
+
 
 ## IV. Conclusion 
 This SQL project delved into the AdventureWorks dataset, revealing key insights into sales trends, customer demographics, and product performance. The analysis highlights the power of data-driven strategies in optimizing business operations and making informed decisions. Through this project, I enhanced my SQL skills and demonstrated the practical applications of data analysis in a business context.
