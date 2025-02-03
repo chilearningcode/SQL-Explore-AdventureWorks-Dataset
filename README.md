@@ -53,6 +53,8 @@ order by 2,1 desc;
 |7	|Nov 2013|Bike Racks|142|11472.0|50|
 |8  |	...
 
+Top products with highest orders, sale revenue, sale quantity
+
 #### Query 02: Calc % YoY growth rate by SubCategory & release top 3 cat with highest grow rate. Can use metric: quantity_item. Round results to 2 decimal
 ```sql
 with qty_data as (
@@ -92,6 +94,7 @@ order by dkr;
 |2	|Socks|2724|523|4.21|2
 |3	|Road Frames|5564|1137|3.89|3
 
+Compare product sale quantity between curent month and previous month. <br>
 "Road Frames" was the product with the highest quantity sales, while "Mountain Frames" and "Socks" have the growth rate YoY%
 
 #### Query 03: Query 3: Ranking Top 3 TeritoryID with biggest Order quantity of every year. If there's TerritoryID with same quantity in a year, do not skip the rank number
