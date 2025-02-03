@@ -14,7 +14,8 @@ The AdventureWorks2019 dataset by Microsoft is a comprehensive sample database s
 
 ## II. Insight
 
-
+- Product's sale revenue, sale quantity were performing well in the market. 
+- Revamp the order process to reduce pending orders, which in turn can drive higher sales revenue.
 
 ## III. Eploring the Dataset
 ### Apply Problem Solving 
@@ -135,7 +136,7 @@ where rk <=3;
 |11	|2011|6|2705|2
 |12	|2011|1|1964|3
 
-
+Territory No. 4 consistently held the highest order rates throughout all the years, followed by Territory No. 6.
 
 #### Query 04: Query 4: Calc Total Discount Cost belongs to Seasonal Discount for each SubCategory
 ```sql
@@ -164,7 +165,8 @@ order by 2,1;
 |1	|2012|Helmets|149.71669
 |2	|2013|Helmets|543.21975
 
-There was a substantial increase in the discount cost from 2012 to 2013 for the "Helmets" subcategory, indicating a more aggressive discount strategy or higher sales volume benefiting from seasonal discounts.
+There was only "Helmets" sub-category has discount promotion in both years 2012, 2013. <br> 
+A substantial increase in the discount cost from 2012 to 2013 indicating a more aggressive discount strategy or higher sales volume benefiting from seasonal discounts.
 
 #### Query 05: Query 5: Retention rate of Customer in 2014 with status of Successfully Shipped (Cohort Analysis)
 ```sql
@@ -242,7 +244,7 @@ order by 1,2;
 |27	|7|M - 5|8
 |28	|7|M - 6|18
 
-There is a notable drop in retention from the first month to subsequent months. Most customers who made their first purchase in a given month did not return in significant numbers in the following months.
+There is a notable drop in retention from the first month to subsequent months. Most customers who made their first purchase in a given month did not return in significant numbers in the following months. <br> 
 This pattern is consistent across all months analyzed, indicating a need for strategies to improve customer retention.
 
 #### Query 06: Trend of Stock level & MoM diff % by all product in 2011. If %gr rate is null then 0. Round to 1 decimal
@@ -280,7 +282,8 @@ order by 1,2 desc;
 |7	|BB Ball Bearing|6|2011|5259|null|0.0
 |8	|...
 
-
+Observe the fluctuations and variations in the stock quantity of each product over the last 6 months of the year. <br> 
+The data reveals a consistent decrease each quarter, indicating that the products were selling well and steadily.
 
 #### Query 07: Calc Ratio of Stock / Sales in 2011 by product name, by month *Order results by month desc, ratio desc. Round Ratio to 1 decimal mom yoy*
 ```sql
@@ -329,7 +332,7 @@ order by 1 desc, 7 desc ;
 |7	|12|2011|761|Road-650 Red, 62|62|465|7.5
 |8	|...
 
-
+Higher sales and a lower ratio indicate that the products were performing well in the market.
 
 #### Query 08: No of order and value at Pending status in 2014
 ```sql
@@ -347,7 +350,7 @@ group by 1,2;
 |-|-|-|-|-
 |1	|2014|1|224|3873579.0123000029
 
-
+The number of pending orders was quite high. It is highly **recommended to revamp the order process** to reduce pending orders, which in turn can drive higher sales revenue.
 
 ## IV. Conclusion 
 This SQL project delved into the AdventureWorks dataset, revealing key insights into sales trends, customer demographics, and product performance. The analysis highlights the power of data-driven strategies in optimizing business operations and making informed decisions. Through this project, I enhanced my SQL skills and demonstrated the practical applications of data analysis in a business context.
