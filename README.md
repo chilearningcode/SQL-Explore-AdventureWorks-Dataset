@@ -1,3 +1,38 @@
+![1711408967531](https://github.com/user-attachments/assets/58453876-951e-4fdd-9cb4-907d6e9dae7a)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # [SQL] AdventureWorks Dataset Exploring 
 ## I. Introduction 
 ### Overview
