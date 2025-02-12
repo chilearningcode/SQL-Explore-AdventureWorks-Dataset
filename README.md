@@ -30,15 +30,15 @@ Tools Used: SQL - BigQuery Platform
 
 ###  ❓Business Questions:  
 
-✔️ Analyze data on items, sales, order quantities, growth rates, top categories, top territories, and total discount costs by subcategories. <br>
-✔️ Assess customer retention rates, stock level trends, month-over-month differences, and stock-to-sales ratios. <br>
-✔️ Evaluate the number and value of pending orders in 2014.
+✔️  Analyze data on items, sales, order quantities, growth rates, top categories, top territories, and total discount costs by subcategories. <br>
+✔️  Assess customer retention rates, stock level trends, month-over-month differences, and stock-to-sales ratios. <br>
+✔️  Evaluate the number and value of pending orders in 2014.
 
 ### 🎯Project Outcome:  
 
-✔️ Sales and Growth Trends: Bike Racks and Road Frames achieved the highest sales revenue and quantity, respectively. Mountain Frames and Socks showed notable year-over-year growth. <br>
-✔️ Discounts and Customer Retention: Helmets had continuous discount promotions with increased discount costs from 2012 to 2013, while customer retention dropped significantly after the first purchase, indicating the need for better retention strategies. <br>
-✔️ Stock and Order Management: Stock levels consistently decreased each quarter, suggesting strong sales. High pending order counts highlight the necessity of revamping the order process to drive higher sales revenue.
+✔️  Sales and Growth Trends: Bike Racks and Road Frames achieved the highest sales revenue and quantity, respectively. Mountain Frames and Socks showed notable year-over-year growth. <br>
+✔️  Discounts and Customer Retention: Helmets had continuous discount promotions with increased discount costs from 2012 to 2013, while customer retention dropped significantly after the first purchase, indicating the need for better retention strategies. <br>
+✔️  Stock and Order Management: Stock levels consistently decreased each quarter, suggesting strong sales. High pending order counts highlight the necessity of revamping the order process to drive higher sales revenue.
 
 ---
 
