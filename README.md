@@ -68,95 +68,27 @@ There're **6 tables** were used in this project
 
 Table 1: Sales.SalesOrderHeader  
 
-👉🏻 Insert a screenshot of table schema 
-
- _Example:_
-
-| Column Name | Data Type | Description |  
-|-------------|----------|-------------|  
-| Product_ID  | INT      | Unique identifier for each product |  
-| Name        | TEXT     | Product name |  
-| Category    | TEXT     | Product category |  
-| Price       | FLOAT    | Price per unit |  
-
-
+![image](https://github.com/user-attachments/assets/1c66bc4b-6db0-46a4-82e0-d5c75e27f3f6)
 
 Table 2: Sales.SalesOrderDetail  
 
-👉🏻 Insert a screenshot of table schema 
-
-
- _Example:_
-
-| Column Name    | Data Type | Description |  
-|---------------|----------|-------------|  
-| Transaction_ID | INT      | Unique identifier for each sale |  
-| Product_ID     | INT      | Foreign key linking to Products table |  
-| Quantity       | INT      | Number of items sold |  
-| Sale_Date      | DATE     | Date of transaction |  
-
+![image](https://github.com/user-attachments/assets/75cee63e-8294-4fef-a7d1-b2fd7b94c6f0)
 
 Table 3: Production.Product  
 
-👉🏻 Insert a screenshot of table schema 
-
 ![image](https://github.com/user-attachments/assets/ebbbc06e-da4d-47ea-9120-c90b74fcc50e)
-
- _Example:_
-
-| Column Name    | Data Type | Description |  
-|---------------|----------|-------------|  
-| Transaction_ID | INT      | Unique identifier for each sale |  
-| Product_ID     | INT      | Foreign key linking to Products table |  
-| Quantity       | INT      | Number of items sold |  
-| Sale_Date      | DATE     | Date of transaction |  
-
 
 Table 4: Production.ProductSubcategory  
 
-👉🏻 Insert a screenshot of table schema 
-
-
- _Example:_
-
-| Column Name    | Data Type | Description |  
-|---------------|----------|-------------|  
-| Transaction_ID | INT      | Unique identifier for each sale |  
-| Product_ID     | INT      | Foreign key linking to Products table |  
-| Quantity       | INT      | Number of items sold |  
-| Sale_Date      | DATE     | Date of transaction |  
-
+![image](https://github.com/user-attachments/assets/98b727b1-2048-4c11-babb-362dae4cc165)
 
 Table 5: Production.WorkOrder  
 
-👉🏻 Insert a screenshot of table schema 
-
-
- _Example:_
-
-| Column Name    | Data Type | Description |  
-|---------------|----------|-------------|  
-| Transaction_ID | INT      | Unique identifier for each sale |  
-| Product_ID     | INT      | Foreign key linking to Products table |  
-| Quantity       | INT      | Number of items sold |  
-| Sale_Date      | DATE     | Date of transaction |  
-
+![image](https://github.com/user-attachments/assets/3f375412-fd40-4387-9438-baffdfa8338a)
 
 Table 6: Purchasing.PurchaseOrderHeader  
 
-👉🏻 Insert a screenshot of table schema 
-
-
- _Example:_
-
-| Column Name    | Data Type | Description |  
-|---------------|----------|-------------|  
-| Transaction_ID | INT      | Unique identifier for each sale |  
-| Product_ID     | INT      | Foreign key linking to Products table |  
-| Quantity       | INT      | Number of items sold |  
-| Sale_Date      | DATE     | Date of transaction |  
-
-
+![image](https://github.com/user-attachments/assets/52c83743-d62e-413a-a032-330d7aa3cc44)
 
 #### 3️⃣ Data Relationships:  
 Describe the connections between tables—e.g., one-to-many, many-to-many.  
