@@ -26,7 +26,7 @@ Tools Used: SQL - BigQuery Platform
 ### 👤 Who is this project for?  
 
 
-➡️ Sales manager who want to understand the Sales revenue components and Sales trend. 
+➡️ **Sales manager** who want to understand the Sales revenue components and Sales trend. 
 
 ###  ❓Business Questions:  
 
@@ -36,13 +36,71 @@ Tools Used: SQL - BigQuery Platform
 
 ### 🎯Project Outcome:  
 
-- Sales and Growth Trends: Bike Racks and Road Frames achieved the highest sales revenue and quantity, respectively. Mountain Frames and Socks showed notable year-over-year growth.
-- Discounts and Customer Retention: Helmets had continuous discount promotions with increased discount costs from 2012 to 2013, while customer retention dropped significantly after the first purchase, indicating the need for better retention strategies.
-- Stock and Order Management: Stock levels consistently decreased each quarter, suggesting strong sales. High pending order counts highlight the necessity of revamping the order process to drive higher sales revenue.
+- **Sales and Growth Trends**: Bike Racks and Road Frames achieved the highest sales revenue and quantity, respectively. Mountain Frames and Socks showed notable year-over-year growth.
+- **Discounts and Customer Retention**: Helmets had continuous discount promotions with increased discount costs from 2012 to 2013, while customer retention dropped significantly after the first purchase, indicating the need for better retention strategies.
+- **Stock and Order Management**: Stock levels consistently decreased each quarter, suggesting strong sales. High pending order counts highlight the necessity of revamping the order process to drive higher sales revenue.
 
 ---
 
+## 📂 Dataset Description & Data Structure  
 
+### 📌 Data Source  
+- Source: The AdventureWorks2019 dataset by Microsoft is a comprehensive sample database that simulates a manufacturing company's operations.
+<details>
+<summary>Click to toggle contents of `code`</summary>
+
+```
+CODE!
+```
+</details>
+
+- Size: (Mention the number of rows & columns)  
+- Format: (.csv, .sql, .xlsx, etc.)  
+
+### 📊 Data Structure & Relationships  
+
+#### 1️⃣ Tables Used:  
+Mention how many tables are in the dataset.  
+
+#### 2️⃣ Table Schema & Data Snapshot  
+
+Table 1: Products Table  
+
+👉🏻 Insert a screenshot of table schema 
+
+ _Example:_
+
+| Column Name | Data Type | Description |  
+|-------------|----------|-------------|  
+| Product_ID  | INT      | Unique identifier for each product |  
+| Name        | TEXT     | Product name |  
+| Category    | TEXT     | Product category |  
+| Price       | FLOAT    | Price per unit |  
+
+
+
+Table 2: Sales Transactions  
+
+👉🏻 Insert a screenshot of table schema 
+
+
+ _Example:_
+
+| Column Name    | Data Type | Description |  
+|---------------|----------|-------------|  
+| Transaction_ID | INT      | Unique identifier for each sale |  
+| Product_ID     | INT      | Foreign key linking to Products table |  
+| Quantity       | INT      | Number of items sold |  
+| Sale_Date      | DATE     | Date of transaction |  
+
+
+
+#### 3️⃣ Data Relationships:  
+Describe the connections between tables—e.g., one-to-many, many-to-many.  
+
+👉🏻 Include a screenshot of Data Modeling to visualize relationships.  
+
+---
 
 
 
