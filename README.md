@@ -1,6 +1,18 @@
 ![1711408967531](https://github.com/user-attachments/assets/58453876-951e-4fdd-9cb4-907d6e9dae7a)
 
+# 📊 Project Title: AdventureWorks Dataset Exploring  
+Author: Tri Nguyen  
+Date: Nov. 10, 2024 
+Tools Used: SQL - BigQuery Platform 
 
+---
+
+## 📑 Table of Contents  
+1. [📌 Background & Overview](#-background--overview)  
+2. [📂 Dataset Description & Data Structure](#-dataset-description--data-structure)  
+3. [🧠 Design Thinking Process](#-design-thinking-process)  
+4. [📊 Key Insights & Visualizations](#-key-insights--visualizations)  
+5. [🔎 Final Conclusion & Recommendations](#-final-conclusion--recommendations)
 
 
 
