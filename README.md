@@ -62,11 +62,11 @@ Tools Used: SQL - BigQuery Platform
 ### 📊 Data Structure & Relationships  
 
 #### 1️⃣ Tables Used:  
-Mention how many tables are in the dataset.  
+There're **6 tables** were used in this project  
 
 #### 2️⃣ Table Schema & Data Snapshot  
 
-Table 1: Products Table  
+Table 1: Sales.SalesOrderHeader  
 
 👉🏻 Insert a screenshot of table schema 
 
@@ -81,7 +81,68 @@ Table 1: Products Table
 
 
 
-Table 2: Sales Transactions  
+Table 2: Sales.SalesOrderDetail  
+
+👉🏻 Insert a screenshot of table schema 
+
+
+ _Example:_
+
+| Column Name    | Data Type | Description |  
+|---------------|----------|-------------|  
+| Transaction_ID | INT      | Unique identifier for each sale |  
+| Product_ID     | INT      | Foreign key linking to Products table |  
+| Quantity       | INT      | Number of items sold |  
+| Sale_Date      | DATE     | Date of transaction |  
+
+
+Table 3: Production.Product  
+
+👉🏻 Insert a screenshot of table schema 
+
+![image](https://github.com/user-attachments/assets/ebbbc06e-da4d-47ea-9120-c90b74fcc50e)
+
+ _Example:_
+
+| Column Name    | Data Type | Description |  
+|---------------|----------|-------------|  
+| Transaction_ID | INT      | Unique identifier for each sale |  
+| Product_ID     | INT      | Foreign key linking to Products table |  
+| Quantity       | INT      | Number of items sold |  
+| Sale_Date      | DATE     | Date of transaction |  
+
+
+Table 4: Production.ProductSubcategory  
+
+👉🏻 Insert a screenshot of table schema 
+
+
+ _Example:_
+
+| Column Name    | Data Type | Description |  
+|---------------|----------|-------------|  
+| Transaction_ID | INT      | Unique identifier for each sale |  
+| Product_ID     | INT      | Foreign key linking to Products table |  
+| Quantity       | INT      | Number of items sold |  
+| Sale_Date      | DATE     | Date of transaction |  
+
+
+Table 5: Production.WorkOrder  
+
+👉🏻 Insert a screenshot of table schema 
+
+
+ _Example:_
+
+| Column Name    | Data Type | Description |  
+|---------------|----------|-------------|  
+| Transaction_ID | INT      | Unique identifier for each sale |  
+| Product_ID     | INT      | Foreign key linking to Products table |  
+| Quantity       | INT      | Number of items sold |  
+| Sale_Date      | DATE     | Date of transaction |  
+
+
+Table 6: Purchasing.PurchaseOrderHeader  
 
 👉🏻 Insert a screenshot of table schema 
 
