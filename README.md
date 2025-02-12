@@ -91,9 +91,13 @@ Table 6: Purchasing.PurchaseOrderHeader
 ![image](https://github.com/user-attachments/assets/52c83743-d62e-413a-a032-330d7aa3cc44)
 
 #### 3️⃣ Data Relationships:  
-Describe the connections between tables—e.g., one-to-many, many-to-many.  
 
-👉🏻 Include a screenshot of Data Modeling to visualize relationships.  
+- Field `SalesOrderDetai.SalesOrderID` is foreign key to `SalesOrderHeader.SalesOrderID`
+- Field `SalesOrderDetai.ProductID` is foreign key to `Product.ProductID`
+- Field `Product.ProductID` is foreign key to `WorkOrder.ProductID`
+- Field `Product.ProductSubcategoryID` is foreign key to `ProductSubCategory.ProductSubcategoryID`
+
+![image](https://github.com/user-attachments/assets/9ddad757-f722-4866-8cfe-d3921379c990)
 
 ---
 
