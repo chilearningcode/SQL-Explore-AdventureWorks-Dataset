@@ -14,7 +14,33 @@ Tools Used: SQL - BigQuery Platform
 4. [📊 Key Insights & Visualizations](#-key-insights--visualizations)  
 5. [🔎 Final Conclusion & Recommendations](#-final-conclusion--recommendations)
 
+---
 
+## 📌 Background & Overview  
+
+### Objective:
+### 📖 What is this project about? 
+ 
+> This project utilizes advanced SQL techniques to analyze the AdventureWorks dataset, revealing trends, enhancing data visualization, and supporting decision-making within a business environment.  
+
+### 👤 Who is this project for?  
+
+
+➡️ Sales manager who want to understand the Sales revenue components and Sales trend. 
+
+###  ❓Business Questions:  
+
+✔️ Analyze data on items, sales, order quantities, growth rates, top categories, top territories, and total discount costs by subcategories.
+✔️ Assess customer retention rates, stock level trends, month-over-month differences, and stock-to-sales ratios.
+✔️ Evaluate the number and value of pending orders in 2014.
+
+### 🎯Project Outcome:  
+
+✔️ Sales and Growth Trends: Bike Racks and Road Frames achieved the highest sales revenue and quantity, respectively. Mountain Frames and Socks showed notable year-over-year growth.
+✔️ Discounts and Customer Retention: Helmets had continuous discount promotions with increased discount costs from 2012 to 2013, while customer retention dropped significantly after the first purchase, indicating the need for better retention strategies.
+✔️ Stock and Order Management: Stock levels consistently decreased each quarter, suggesting strong sales. High pending order counts highlight the necessity of revamping the order process to drive higher sales revenue.
+
+---
 
 
 
@@ -101,7 +127,7 @@ order by 2,1 desc;
 |7	|Nov 2013|Bike Racks|142|11472.0|50|
 |8  |	...
 
-Top products with highest orders, sale revenue, sale quantity
+Bike Racks have had the highest sales revenue in the past 12 months, indicating strong market demand.
 
 #### Query 02: Calc % YoY growth rate by SubCategory & release top 3 cat with highest grow rate. Can use metric: quantity_item. Round results to 2 decimal
 ```sql
@@ -142,8 +168,7 @@ order by dkr;
 |2	|Socks|2724|523|4.21|2
 |3	|Road Frames|5564|1137|3.89|3
 
-Compare product sale quantity between curent month and previous month. <br>
-"Road Frames" was the product with the highest quantity sales, while "Mountain Frames" and "Socks" have the growth rate YoY%
+Road Frames had the highest quantity sales, while Mountain Frames and Socks showed the highest _year-over-year_ growth rates.
 
 #### Query 03: Query 3: Ranking Top 3 TeritoryID with biggest Order quantity of every year. If there's TerritoryID with same quantity in a year, do not skip the rank number
 ```sql
@@ -183,7 +208,7 @@ where rk <=3;
 |11	|2011|6|2705|2
 |12	|2011|1|1964|3
 
-Territory No. 4 consistently held the highest order rates throughout all the years, followed by Territory No. 6.
+Territory No. 4 consistently had the highest order rates each year, with Territory No. 6 following closely behind.
 
 #### Query 04: Query 4: Calc Total Discount Cost belongs to Seasonal Discount for each SubCategory
 ```sql
@@ -212,8 +237,8 @@ order by 2,1;
 |1	|2012|Helmets|149.71669
 |2	|2013|Helmets|543.21975
 
-There was only "Helmets" sub-category has discount promotion in both years 2012, 2013. <br> 
-A substantial increase in the discount cost from 2012 to 2013 indicating a more aggressive discount strategy or higher sales volume benefiting from seasonal discounts.
+The "Helmets" sub-category was the only one with discount promotions in both 2012 and 2013. <br> 
+There was a significant increase in discount costs from 2012 to 2013, suggesting a more aggressive discount strategy or higher sales volumes benefiting from seasonal discounts.
 
 #### Query 05: Query 5: Retention rate of Customer in 2014 with status of Successfully Shipped (Cohort Analysis)
 ```sql
@@ -291,8 +316,7 @@ order by 1,2;
 |27	|7|M - 5|8
 |28	|7|M - 6|18
 
-There is a notable drop in retention from the first month to subsequent months. Most customers who made their first purchase in a given month did not return in significant numbers in the following months. <br> 
-This pattern is consistent across all months analyzed, indicating a need for strategies to improve customer retention.
+Retention drops significantly from the first month to subsequent months, with few customers returning after their initial purchase. This trend is consistent across all months analyzed, highlighting **the need for improved customer retention strategies**.
 
 #### Query 06: Trend of Stock level & MoM diff % by all product in 2011. If %gr rate is null then 0. Round to 1 decimal
 ```sql
@@ -329,8 +353,7 @@ order by 1,2 desc;
 |7	|BB Ball Bearing|6|2011|5259|null|0.0
 |8	|...
 
-Observe the fluctuations and variations in the stock quantity of each product over the last 6 months of the year. <br> 
-The data reveals a consistent decrease each quarter, indicating that the products were selling well and steadily.
+Over the last 6 months of the year, the data shows fluctuations and variations in stock quantity for each product. There is a consistent decrease each quarter, suggesting that **the products were selling well and steadily**.
 
 #### Query 07: Calc Ratio of Stock / Sales in 2011 by product name, by month *Order results by month desc, ratio desc. Round Ratio to 1 decimal mom yoy*
 ```sql
@@ -379,7 +402,7 @@ order by 1 desc, 7 desc ;
 |7	|12|2011|761|Road-650 Red, 62|62|465|7.5
 |8	|...
 
-Higher sales and a lower ratio indicate that the products were performing well in the market.
+Higher sales and a lower stock-to-sales ratio over the months indicate that the products were performing well in the market. This suggests strong demand and efficient inventory management.
 
 #### Query 08: No of order and value at Pending status in 2014
 ```sql
@@ -397,7 +420,7 @@ group by 1,2;
 |-|-|-|-|-
 |1	|2014|1|224|3873579.0123000029
 
-The number of pending orders was quite high. It is highly **recommended to revamp the order process** to reduce pending orders, which in turn can drive higher sales revenue.
+The high number of pending orders highlights the need to **revamp the order process**. Doing so can help reduce pending orders and drive higher sales revenue.
 
 ## IV. Conclusion 
 This SQL project delved into the AdventureWorks dataset, revealing key insights into sales trends, customer demographics, and product performance. The analysis highlights the power of data-driven strategies in optimizing business operations and making informed decisions. Through this project, I enhanced my SQL skills and demonstrated the practical applications of data analysis in a business context.
