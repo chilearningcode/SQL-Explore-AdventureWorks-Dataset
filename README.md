@@ -46,13 +46,16 @@ Tools Used: SQL - BigQuery Platform
 
 ### 📌 Data Source  
 - Source: The AdventureWorks2019 dataset by Microsoft is a comprehensive sample database that simulates a manufacturing company's operations.
-<details>
-<summary>Click to toggle contents of `code`</summary>
+  <details>
+  <summary>To access the dataset, follow these step</summary>
+  
+  - Log in to your Google Cloud Platform account and create a new project.
+ - Navigate to the BigQuery console and select your newly created project.
+ - In the navigation panel, select "Add Data" and then choose "Star a project by name".
+ - Enter the project name **"adventureworks2019"** and click "Enter".
+ - Click on the **"adventureworks2019"** table to open it.
 
-```
-CODE!
-```
-</details>
+  </details>
 
 - Size: (Mention the number of rows & columns)  
 - Format: (.csv, .sql, .xlsx, etc.)  
