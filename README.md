@@ -74,6 +74,21 @@ Table 2: Sales.SalesOrderDetail
 
 ![image](https://github.com/user-attachments/assets/75cee63e-8294-4fef-a7d1-b2fd7b94c6f0)
 
+| Column Name            | Data Type       | Description/Attributes                                                                   |
+|------------------------|-----------------|------------------------------------------------------------------------------------------|
+| SalesOrderID           | int             | Primary key. Foreign key to SalesOrderHeader.SalesOrderID.                                |
+| SalesOrderDetailID     | int             | Primary key. One incremental unique number per product sold. Identity / Auto increment.   |
+| CarrierTrackingNumber  | nvarchar(25)    | Shipment tracking number supplied by the shipper.                                         |
+| OrderQty               | smallint        | Quantity ordered per product.                                                            |
+| ProductID              | int             | Product sold to customer. Foreign key to Product.ProductID.                               |
+| SpecialOfferID         | int             | Promotional code. Foreign key to SpecialOffer.SpecialOfferID.                             |
+| UnitPrice              | money           | Selling price of a single product.                                                       |
+| UnitPriceDiscount      | money           | Discount amount. Default: 0.0.                                                           |
+| LineTotal     | numeric(38, 6)   | Per product subtotal. Computed as UnitPrice * (1 - UnitPriceDiscount) * OrderQty. Computed: isnull((([UnitPrice]*((1.0-[UnitPriceDiscount])*[OrderQty]),(0.0)) |
+| rowguid       | uniqueidentifier | ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample. Default: newid() |
+| ModifiedDate  | datetime         | Date and time the record was last updated. Default: getdate()                                                 |
+
+
 Table 3: Production.Product  
 
 ![image](https://github.com/user-attachments/assets/ebbbc06e-da4d-47ea-9120-c90b74fcc50e)
