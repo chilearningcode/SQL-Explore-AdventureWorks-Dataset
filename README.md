@@ -46,6 +46,8 @@ Tools Used: SQL - BigQuery Platform
 
 ### 📌 Data Source  
 - Source: The AdventureWorks2019 dataset by Microsoft is a comprehensive sample database that simulates a manufacturing company's operations.
+- Size: Over 121000 rows 
+- Format: 
   <details>
   <summary>To access the dataset, follow these step</summary>
   
@@ -56,9 +58,6 @@ Tools Used: SQL - BigQuery Platform
   - Click on the **"adventureworks2019"** table to open it.
 
   </details>
-
-- Size: (Mention the number of rows & columns)  
-- Format: (.csv, .sql, .xlsx, etc.)  
 
 ### 📊 Data Structure & Relationships  
 
