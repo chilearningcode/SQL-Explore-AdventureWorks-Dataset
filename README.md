@@ -246,6 +246,7 @@ order by 2,1 desc;
 💡 Bike Racks have had the highest sales revenue in the past 12 months, indicating strong market demand.
 
 #### Query 2️⃣: Calc % YoY growth rate by SubCategory & release top 3 cat with highest grow rate. Can use metric: quantity_item. Round results to 2 decimal
+> To calculate the year-over-year (YoY) growth rate by subcategory and determine which subcategories are on the top 3 by their growth rates using the metric quantity_item
 ```sql
 with qty_data as (
     select 
@@ -287,6 +288,7 @@ order by dkr;
 💡 Road Frames had the highest quantity sales, while Mountain Frames and Socks showed the highest _year-over-year_ growth rates.
 
 #### Query 3️⃣: Query 3: Ranking Top 3 TeritoryID with biggest Order quantity of every year. If there's TerritoryID with same quantity in a year, do not skip the rank number
+> To evaluate the sales performance across different territories by analyze the total number of orders for each territory.
 ```sql
 with 
   data as (
@@ -327,6 +329,7 @@ where rk <=3;
 💡 Territory No. 4 consistently had the highest order rates each year, with Territory No. 6 following closely behind.
 
 #### Query 4️⃣: Query 4: Calc Total Discount Cost belongs to Seasonal Discount for each SubCategory
+> To compare and evaluate the total cost of seasonal discounts for each subcategory by year 
 ```sql
 with discount_data as (
   select distinct 
@@ -357,6 +360,7 @@ order by 2,1;
 There was a significant increase in discount costs from 2012 to 2013, suggesting a more aggressive discount strategy or higher sales volumes benefiting from seasonal discounts.
 
 #### Query 5️⃣: Query 5: Retention rate of Customer in 2014 with status of Successfully Shipped (Cohort Analysis)
+> To understand why customers left despite positive order statuses 
 ```sql
 with 
   info as (
@@ -435,6 +439,7 @@ order by 1,2;
 💡 Retention drops significantly from the first month to subsequent months, with few customers returning after their initial purchase. This trend is consistent across all months analyzed, highlighting **the need for improved customer retention strategies**.
 
 #### Query 6️⃣: Trend of Stock level & MoM diff % by all product in 2011. If %gr rate is null then 0. Round to 1 decimal
+> Analyzing stock trends can provide insights into the efficiency of the purchasing department's and manufacturer's performance 
 ```sql
 with data_2011 as (
   select 
@@ -472,6 +477,7 @@ order by 1,2 desc;
 💡 Over the last 6 months of the year, the data shows fluctuations and variations in stock quantity for each product. There is a consistent decrease each quarter, suggesting that **the products were selling well and steadily**.
 
 #### Query 7️⃣: Calc Ratio of Stock / Sales in 2011 by product name, by month *Order results by month desc, ratio desc. Round Ratio to 1 decimal mom yoy*
+> Analyzing stock trends can provide insights into the efficiency of the sales department's performance
 ```sql
 with sale_data as (
   select 
@@ -521,6 +527,7 @@ order by 1 desc, 7 desc ;
 💡 Higher sales and a lower stock-to-sales ratio over the months indicate that the products were performing well in the market. This suggests strong demand and efficient inventory management.
 
 #### Query 8️⃣: No of order and value at Pending status in 2014
+> Pending orders can reflect the efficiency and performance of our vendors 
 ```sql
 select 
   extract(year from ModifiedDate) as yr
