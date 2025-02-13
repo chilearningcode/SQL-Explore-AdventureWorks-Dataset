@@ -38,7 +38,7 @@
 
 - **Sales and Growth Trends**: Bike Racks and Road Frames achieved the highest sales revenue and quantity, respectively. Mountain Frames and Socks showed notable year-over-year growth.
 - **Discounts and Customer Retention**: Helmets had continuous discount promotions with increased discount costs from 2012 to 2013, while customer retention dropped significantly after the first purchase, indicating the need for better retention strategies.
-- **Stock and Order Management**: Stock levels consistently decreased each quarter, suggesting strong sales. High pending order counts highlight the necessity of revamping the order process to drive higher sales revenue.
+- **Stock and Order Management**: Quarterly stock levels consistently declined, indicating robust sales. A substantial number of pending orders highlight the need to assess vendor performance for efficiency and suggest improvements to their order processes.
 
 ---
 
@@ -535,7 +535,8 @@ group by 1,2;
 |-|-|-|-|-
 |1	|2014|1|224|3873579.0123000029
 
-💡 The high number of pending orders highlights the need to **revamp the order process**. Doing so can help reduce pending orders and drive higher sales revenue.
+💡 The significant number of pending orders underscores the necessity of evaluating vendor performance to gauge their efficiency and recommending a revamp of their order processes.
+
 
 ---
 
