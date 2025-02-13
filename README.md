@@ -1,9 +1,9 @@
 ![1711408967531](https://github.com/user-attachments/assets/58453876-951e-4fdd-9cb4-907d6e9dae7a)
 
 # 📊 Project Title: AdventureWorks Dataset Exploring  
-Author: Tri Nguyen  
-Date: Nov. 10, 2024 
-Tools Used: SQL - BigQuery Platform 
+🤵 Author: Tri Nguyen  <br> 
+📆 Date: Nov. 10, 2024 <br> 
+💻 Tools Used: SQL - BigQuery Platform 
 
 ---
 
