@@ -214,6 +214,7 @@ Table 6: Purchasing.PurchaseOrderHeader
 ## 📊 Explore the Dataset & Generate Insights
 
 #### Query 1️⃣: Calc Quantity of items, Sales value & Order quantity by each Subcategory in Last 12 Mth
+> To gain a deeper understanding of our sales performance, we need to calculate and analyze the following metrics for each subcategory over the past 12 months
 ```sql
 SELECT 
   format_datetime('%b %Y', sod.ModifiedDate) as period
