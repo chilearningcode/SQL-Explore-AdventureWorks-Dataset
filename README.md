@@ -100,7 +100,8 @@ There're **6 tables** were used in this project
 
 </details>
 
-Table 2: Sales.SalesOrderDetail  
+<details>
+<summary>Table 2: Sales.SalesOrderDetail</summary>
 
 | Column Name            | Data Type       | Description/Attributes                                                                   |
 |------------------------|-----------------|------------------------------------------------------------------------------------------|
@@ -116,8 +117,10 @@ Table 2: Sales.SalesOrderDetail
 | rowguid                | uniqueidentifier | ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample. Default: newid() |
 | ModifiedDate           | datetime         | Date and time the record was last updated. Default: getdate()                                                 |
 
+</details>
 
-Table 3: Production.Product  
+<details>
+<summary>Table 3: Production.Product</summary>
 
 | Name                     | Data type        | Description / Attributes                                                                                      |
 |--------------------------|------------------|---------------------------------------------------------------------------------------------------------------|
@@ -147,8 +150,10 @@ Table 3: Production.Product
 | rowguid                  | uniqueidentifier | ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample. Default: newid()|
 | ModifiedDate             | datetime         | Date and time the record was last updated. Default: getdate()                                                 |
 
+</details>
 
-Table 4: Production.ProductSubcategory  
+<details>
+<summary>Table 4: Production.ProductSubcategory </summary> 
 
 | Name                  | Data type        | Description / Attributes                                                                                      |
 |-----------------------|------------------|---------------------------------------------------------------------------------------------------------------|
@@ -158,8 +163,10 @@ Table 4: Production.ProductSubcategory
 | rowguid               | uniqueidentifier | ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample. Default: newid()|
 | ModifiedDate          | datetime         | Date and time the record was last updated. Default: getdate()                                                 |
 
+</details>
 
-Table 5: Production.WorkOrder  
+<details>
+<summary>Table 5: Production.WorkOrder</summary>
 
 | Name                  | Data type        | Description / Attributes                                                                                      |
 |-----------------------|------------------|---------------------------------------------------------------------------------------------------------------|
@@ -174,8 +181,10 @@ Table 5: Production.WorkOrder
 | ScrapReasonID         | smallint         | Reason for inspection failure                                                                                 |
 | ModifiedDate          | datetime         | Date and time the record was last updated. Default: getdate()                                                 |
 
+</details>
 
-Table 6: Purchasing.PurchaseOrderHeader  
+<details>
+<summary>Table 6: Purchasing.PurchaseOrderHeader</summary>
 
 | Name                | Data type  | Description / Attributes                                                                                              |
 |---------------------|------------|-----------------------------------------------------------------------------------------------------------------------|
@@ -193,6 +202,7 @@ Table 6: Purchasing.PurchaseOrderHeader
 | TotalDue            | money      | Total due to vendor. Computed as Subtotal + TaxAmt + Freight. Computed: isnull((([SubTotal] + [TaxAmt]) + [Freight]), (0)) |
 | ModifiedDate        | datetime   | Date and time the record was last updated. Default: getdate()                                                  |
 
+</details>
 
 #### 3️⃣ Data Relationships:  
 
