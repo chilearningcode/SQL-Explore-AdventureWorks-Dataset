@@ -66,7 +66,8 @@ There're **6 tables** were used in this project
 
 #### 2️⃣ Table Schema & Data Snapshot  
 
-Table 1: Sales.SalesOrderHeader  
+<details>
+<summary>Table 1: Sales.SalesOrderHeader</summary>  
 
 | Name                   | Data type       | Description / Attributes                                                                          |
 |------------------------|-----------------|---------------------------------------------------------------------------------------------------|
@@ -97,6 +98,7 @@ Table 1: Sales.SalesOrderHeader
 | rowguid                | uniqueidentifier| ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample. Default: newid() |
 | ModifiedDate           | datetime       | Date and time the record was last updated. Default: getdate()                                     |
 
+</details>
 
 Table 2: Sales.SalesOrderDetail  
 
